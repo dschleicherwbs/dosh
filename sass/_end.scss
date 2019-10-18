@@ -1,0 +1,43 @@
+.container-end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .quote-container {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    .quote {
+      margin: 1rem;
+      margin-left: 2.3rem;
+      position: relative;
+      font-family: "Gloria Hallelujah", cursive;
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+      color: $sec-color;
+
+      b {
+        color: $main-color-lighter;
+        line-height: 3rem;
+      }
+      i {
+        position: absolute;
+        top: 0;
+        left: -5rem;
+        font-size: 5rem;
+        color: $text-muted;
+        color: $main-color-lighter;
+        font-weight: 500;
+      }
+    }
+    small {
+      align-self: flex-end;
+      color: $text-muted;
+      font-weight: 600;
+      margin-top: -0.5rem;
+      margin-right: 2rem;
+    }
+  }
+}

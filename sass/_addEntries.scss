@@ -1,0 +1,66 @@
+.addentries {
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    input[type="text"] {
+      padding: 0;
+      margin: 0;
+      border: none;
+      width: 13ch;
+      &:focus {
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    &-edit-btns {
+      display: flex;
+
+      & button {
+        width: 50%;
+        &:first-of-type {
+          margin-right: 0.7rem;
+        }
+      }
+    }
+
+    &-skeleton {
+      &.entries-item {
+        opacity: 0.5;
+        filter: grayscale(80%);
+        &:focus-within,
+        &:hover,
+        &.selected {
+          filter: grayscale(0%);
+          opacity: 1;
+        }
+      }
+      & .entries-item {
+        &-body {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        &-bottom-span {
+          opacity: 1;
+          background: black;
+          visibility: visible;
+          transform: unset;
+        }
+      }
+    }
+  }
+
+  &-days {
+    display: flex;
+    flex-wrap: wrap;
+
+    .btn {
+      margin-bottom: 0;
+    }
+
+    .selected {
+      border-color: $text-white;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.container-groups {
+  .head {
+    align-items: baseline;
+  }
+}
+
+.groups {
+  &-items {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    & .btn {
+      // margin-bottom: 1rem;
+    }
+  }
+
+  &-form {
+    display: flex;
+  }
+}

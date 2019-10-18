@@ -1,0 +1,73 @@
+.alerts-item {
+  display: flex;
+  align-items: stretch;
+  background: $main-color;
+  margin-top: 0.6rem;
+  width: 300px;
+  border-radius: 3px;
+  // box-shadow: 1px 1px 2px $text-muted-light;
+  color: $text-white;
+  border: 1px dashed;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  i {
+    font-size: 26px !important;
+  }
+
+  &-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.7rem;
+    border-radius: 3px 0 0 3px;
+  }
+
+  p {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &-text {
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    word-wrap: normal;
+  }
+
+  &.danger {
+    border-color: $danger;
+    color: darken($color: $danger, $amount: 25%);
+    background-color: lighten($color: $danger, $amount: 35%);
+    .alerts-item-icon {
+      color: darken($color: $danger, $amount: 25%);
+      background-color: lighten($color: $danger, $amount: 15%);
+    }
+  }
+  &.success {
+    border-color: $success;
+    color: darken($color: $success, $amount: 25%);
+    background-color: lighten($color: $success, $amount: 35%);
+    .alerts-item-icon {
+      color: darken($color: $success, $amount: 25%);
+      background-color: lighten($color: $success, $amount: 15%);
+    }
+  }
+  &.warning {
+    border-color: $warning;
+    color: darken($color: $warning, $amount: 25%);
+    background-color: lighten($color: $warning, $amount: 35%);
+    .alerts-item-icon {
+      color: darken($color: $warning, $amount: 25%);
+      background-color: lighten($color: $warning, $amount: 15%);
+    }
+  }
+  &.light {
+    border-color: $text-white;
+    color: darken($color: $text-white, $amount: 35%);
+    .alerts-item-icon {
+      color: darken($color: $text-white, $amount: 35%);
+      background-color: lighten($color: $text-white, $amount: 15%);
+    }
+  }
+}

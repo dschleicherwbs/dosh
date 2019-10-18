@@ -1,0 +1,203 @@
+.entries {
+  font-size: 0.8rem;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    &-views,
+    &-sortBy {
+      display: flex;
+    }
+
+    &-sortBy {
+      align-items: flex-end;
+
+      .sort-container {
+        margin-right: 2rem;
+      }
+
+      .label {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: $text-muted-light;
+        font-family: "Roboto", sans-serif;
+      }
+
+      button {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 1.3rem;
+      }
+    }
+
+    &-views {
+      align-items: flex-end;
+      i {
+        font-size: 24px;
+      }
+      & button {
+        margin-right: 0.7rem;
+        margin-bottom: 0;
+      }
+      & button:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+
+    &-title {
+      color: $text-muted;
+      margin-bottom: 0.3rem;
+      margin-top: 0.8rem;
+      display: inline-block;
+      width: min-content;
+      padding: 0 0.2rem;
+      border-radius: 4px;
+      h4 {
+        display: inline;
+      }
+    }
+
+    &.view-grid {
+      grid-template-columns: repeat(3, 1fr);
+
+      .entries-items-title {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+  }
+  &-item {
+    // @include pd-s;
+    padding: 0.4rem 0.5rem;
+    @include easeOut();
+    position: relative;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.85);
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    overflow: hidden;
+
+    &-header {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      font-weight: 500;
+      & h2,
+      & input[type="text"] {
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-right: 0.4rem;
+      }
+    }
+
+    &-group {
+      border: none;
+      border-radius: 2px;
+      padding: 0rem;
+      font-weight: 500;
+      font-size: 0.8rem;
+      line-height: 0.8rem;
+      padding: 0.3rem 0.2rem;
+      height: 100%;
+    }
+
+    &-body {
+    }
+
+    &-footer {
+      font-size: 0.8rem;
+      justify-self: end;
+      color: $text-muted;
+      align-self: flex-end;
+    }
+
+    &-bottom-span {
+      height: 5px;
+      width: 100%;
+      border-radius: 0;
+      visibility: hidden;
+      margin-top: 0.2rem;
+      opacity: 1;
+      transform: translateY(3px);
+      transition: all 125ms ease-out;
+    }
+    &.isDone {
+      opacity: 0.5;
+      .entries-item-selection {
+        transform: translateX(-4rem) translateY(-1rem);
+      }
+    }
+
+    &.isDone.selected {
+      opacity: 1;
+    }
+    &:hover,
+    &:focus-within,
+    &.selected {
+      box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.85);
+      transform: translateY(-2px) translateX(-2px);
+      border-color: black;
+      border-bottom: 1px solid black;
+      transition: transform 100ms ease-in, box-shadow 90ms ease-in,
+        transform 30ms ease-out, box-shadow 10ms ease-out;
+
+      .entries-item-bottom-span {
+        visibility: visible;
+        transform: translateY(0px);
+        opacity: 0.9;
+      }
+
+      .entries-item-selection {
+        transform: translateX(-4rem) translateY(-1rem);
+      }
+    }
+
+    &.selected {
+      .entries-item-selection {
+        transform: translateX(-100%) translateY(-1rem);
+        justify-content: center;
+        transition: transform 220ms ease-in-out;
+        &-btn {
+          &:first-of-type {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    &-selection {
+      transition: transform 130ms ease-in-out;
+      position: absolute;
+      top: 1rem;
+      right: -100%;
+      background-color: $sec-color-light;
+      width: 100%;
+      justify-content: flex-start;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      transform: translateX();
+
+      &-btn {
+        margin-left: 1rem;
+        font-size: 1rem;
+        @include pd-s-bfix-even;
+
+        &.selected {
+          background-color: $lightest-color;
+          @include pd-s-bfix-even;
+        }
+      }
+    }
+  }
+}

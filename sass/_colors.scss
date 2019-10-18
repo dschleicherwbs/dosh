@@ -1,0 +1,52 @@
+$text-muted: rgba(0, 0, 0, 0.45);
+$text-muted-dark: rgba(0, 0, 0, 0.6);
+$text-muted-light: rgba(0, 0, 0, 0.3);
+$text-muted-lighter: rgba(0, 0, 0, 0.15);
+$text-black: rgba(0, 0, 0, 0.8);
+$text-white: rgba(255, 255, 255, 0.9);
+$text-white-light: rgba(255, 255, 255, 0.85);
+$text-white-lighter: rgba(255, 255, 255, 0.7);
+$text-white-lightest: rgba(255, 255, 255, 0.6);
+$text-gray: #5c5c5c;
+
+$shadow-color: rgba(0, 0, 0, 0.74);
+
+$main-color: #1c1c1c;
+$sec-color: #5278ff;
+$nice-color: #eefd76;
+$sec-color-rgba: rgba(77, 77, 255, 1);
+$sec-color-rgba-5: rgba(77, 77, 255, 0.5);
+$sec-color-rgba-9: rgba(77, 77, 255, 0.9);
+
+$main-color-lightest: lighten($main-color, 25%);
+$main-color-lighter: lighten($main-color, 20%);
+$main-color-light: lighten($main-color, 10%);
+
+$main-color-dark: darken($main-color, 40%);
+$main-color-darker: darken($main-color, 50%);
+$main-color-darkest: darken($main-color, 60%);
+
+$sec-color-lightest: lighten($sec-color, 20%);
+$sec-color-lighter: lighten($sec-color, 15%);
+$sec-color-light: lighten($sec-color, 10%);
+
+$sec-color-dark: darken($sec-color, 40%);
+$sec-color-darker: darken($sec-color, 50%);
+$sec-color-darkest: darken($sec-color, 60%);
+
+$light-color: darken(
+  $color: #fff,
+  $amount: 15%
+);
+$lighter-color: darken(
+  $color: #fff,
+  $amount: 5%
+);
+$lightest-color: darken(
+  $color: #fff,
+  $amount: 1.5%
+);
+
+$success: #45f358;
+$warning: #ffbd45;
+$danger: #ff4d44;

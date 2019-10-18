@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+
+  input[type="text"] {
+    @include pd-s;
+    @include mg-s;
+    border: 1px dashed $main-color;
+    border-radius: 5px;
+    outline: none;
+    display: block;
+    width: 100%;
+    background-color: transparent;
+
+    &:focus {
+      border-color: $sec-color;
+    }
+  }
+}

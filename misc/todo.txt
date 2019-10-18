@@ -1,0 +1,10 @@
+EDIT BTN
+GROUP FORM redefine
+ENTRIES SORTING rewrite code
+MAX ZEICHEN TITLE
+ADD TASK CONTENT
+FILTER ?
+Have fun with date/time
+END changing quotes?
+FOOTER
+ALERT BOX design
