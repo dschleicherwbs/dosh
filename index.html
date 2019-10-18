@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+    <title>do.sh!#</title>
+  </head>
+  <body>
+    <!-- -------------------------------------------------------->
+    <!-- Alert Container -->
+    <!-- -------------------------------------------------------->
+    <section class="container container-alerts">
+      <div class="alerts-items"></div>
+    </section>
+    <!-- -------------------------------------------------------->
+    <!-- Head Container -->
+    <!-- -------------------------------------------------------->
+
+    <!-- -------------------------------------------------------->
+    <!-- MAIN AREA -->
+    <!-- -------------------------------------------------------->
+    <main>
+      <!-- -------------------------------------------------------->
+      <!-- Sidebar Container -->
+      <!-- -------------------------------------------------------->
+      <section class="container-sidebar">
+        <section class="container container-head">
+          <header>
+            <h1>
+              <span>do<span class="highlight">.</span>sh!#</span>
+            </h1>
+            <small><span>toDoList App</span></small>
+          </header>
+        </section>
+
+        <!-- -------------------------------------------------------->
+        <!-- Groups Container -->
+        <!-- -------------------------------------------------------->
+        <section class="container container-groups">
+          <div class="head">
+            <h2 class="heading">Groups</h2>
+            <div class="groups-settings">
+              <button
+                class="btn btn-label"
+                id="groups-btn-open-edit"
+                value="editAdd"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+          <div class="groups-items" id="groups-items">
+            <!-- Group Items -->
+          </div>
+
+          <form class="form groups-form mb-1 hidden">
+            <input
+              type="text"
+              id="groups-input-name"
+              placeholder="type Name here..."
+              autocomplete="off"
+            />
+            <input
+              type="color"
+              id="groups-input-color"
+              value="#ffff3e"
+              hidden
+            />
+            <button class="btn btn-flex" value="addGroup" id="groups-btn-add">
+              Add Group
+            </button>
+            <button
+              class="btn btn-flex hidden"
+              value="saveGroup"
+              id="groups-btn-edit"
+            >
+              Save Group
+            </button>
+            <button
+              class="btn  btn-flex"
+              value="pickColor"
+              id="groups-btn-color"
+            >
+              Pick Color
+            </button>
+            <button
+              class="btn btn-tsp btn-flex"
+              value="cancel"
+              id="groups-btn-cancel"
+            >
+              Cancel
+            </button>
+          </form>
+        </section>
+        <!-- -------------------------------------------------------->
+        <!-- Entries Form Container -->
+        <!-- -------------------------------------------------------->
+        <section class="container container-addentries">
+          <h2 class="heading">Add Task</h2>
+          <div class="addentries-days">
+            <button class="btn btn-selective btn-sec-color" value="today">
+              Today
+            </button>
+            <button class="btn btn-selective btn-sec-color" value="tomorrow">
+              Tomorrow
+            </button>
+            <button class="btn btn-selective btn-sec-color" value="later">
+              Later
+            </button>
+            <button
+              class="btn btn-selective btn-sec-color material-icons-outlined"
+              value="selectDay"
+            >
+              date_range
+            </button>
+          </div>
+          <form class="form addentries-form mt-1">
+            <div class="entries-item addentries-form-skeleton">
+              <div class="entries-item-header">
+                <div class="entries-item-group">group</div>
+                <input
+                  type="text"
+                  id="addentries-input-name"
+                  placeholder="new task..."
+                  autocomplete="off"
+                />
+              </div>
+              <div class="entries-item-body"></div>
+              <div class="entries-item-footer">day</div>
+              <div class="entries-item-bottom-span"></div>
+            </div>
+            <button
+              type="button"
+              class="btn mt-05"
+              id="addentries-btn-add"
+              value="addTask"
+            >
+              Add Task
+            </button>
+            <div class="addentries-form-edit-btns hidden">
+              <button
+                type="submit"
+                class="btn mt-05"
+                id="addentries-btn-edit"
+                value="addTask"
+              >
+                Edit Task
+              </button>
+              <button
+                class="btn btn-tsp mt-05"
+                id="addentries-btn-cancel"
+                value="addTask"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </section>
+        <!-- -------------------------------------------------------->
+        <!-- Filter Container -->
+        <!-- -------------------------------------------------------->
+        <section class="container container-filter hidden">
+          <h2 class="heading">Filter</h2>
+          <div class="filter-items mb-1">
+            <div class="filter-items-groups"></div>
+            <div class="filter-items-days"></div>
+          </div>
+        </section>
+      </section>
+      <!-- -------------------------------------------------------->
+      <!-- Entries Container -->
+      <!-- -------------------------------------------------------->
+      <section class="container container-entries">
+        <!-- <h2 class="heading">Tasks</h2> -->
+        <div class="entries-header mb-1">
+          <div class="entries-header-sortBy">
+            <!-- <i class="material-icons-outlined">sort</i> -->
+            <div class="sort-container">
+              <div class="label">sort by</div>
+              <div class="btns">
+                <button
+                  class="btn btn-selective btn-label"
+                  id="entries-btn-sortBy-date"
+                  value="date"
+                >
+                  Date
+                </button>
+                <button
+                  class="btn btn-selective btn-label"
+                  id="entries-btn-sortBy-group"
+                  value="groups"
+                >
+                  Groups
+                </button>
+              </div>
+            </div>
+            <div class="sort-container">
+              <div class="label">show</div>
+              <button
+                class="btn btn-selective btn-label"
+                id="entries-btn-sortBy-isDone"
+                value="isDone"
+              >
+                IsDone
+              </button>
+            </div>
+          </div>
+          <div class="entries-header-views">
+            <button
+              class="btn btn-selective btn-label btn-icon"
+              id="entries-btn-view-row"
+              value="th"
+            >
+              <i class="material-icons-outlined">view_agenda</i>
+            </button>
+            <button
+              class="btn btn-selective btn-label btn-icon"
+              id="entries-btn-view-grid"
+              value="th-large"
+            >
+              <i class="material-icons-outlined">grid_on</i>
+            </button>
+          </div>
+        </div>
+
+        <div class="entries-items">
+          <!-- entries items -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container container-end">
+        <div class="quote-container">
+          <p class="quote">
+            <i class="">
+              ＂
+            </i>
+            Get your shit together.<br />
+            Get it all together and puti it in<br />
+            a backpack. All your shit so it's <br />
+            together and if you gotta take it<br />
+            somewhere, take it somewhere,<br />
+            ya know? Take it to the shit<br />
+            store and sell it or put it in a<br />
+            shitmuseum. I don't care what<br />
+            you do, you just gotta get it<br />
+            together.<br />
+            <b>Get your shit togehter.</b>
+          </p>
+          <small>Morty Smith</small>
+        </div>
+      </div>
+      <div class="container-footer footer footer-background">
+        <div class="footer-head">
+          <h1>Footer</h1>
+        </div>
+        <div class="footer-left">
+          <h3>Lorem, ipsum dolor.</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint,
+            impedit!
+          </p>
+        </div>
+        <div class="footer-right">
+          <div class="head">
+            <h1>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              veniam aliquam nisi.
+            </h1>
+          </div>
+          <div class="body">
+            <div class="item">
+              <p>Lorem, ipsum.</p>
+              <h4>Lorem, ipsum dolor.</h4>
+              <h4>Amen, dolor ipsum.</h4>
+            </div>
+            <div class="item">
+              <p>Lorem, ipsum.</p>
+              <h4>Lorem, ipsum dolor.</h4>
+              <h4>Amen, dolor ipsum.</h4>
+            </div>
+          </div>
+        </div>
+        <div class="footer-footer">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
